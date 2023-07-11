@@ -1,0 +1,1076 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-black: #000;
+    --primary-red: #f10414;
+    --font-color: #fff;
+    --primary-grey: #333;
+}
+
+body{
+    color: var(--font-color);
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+nav, nav .logo, nav ul, header, header ul, .hold-header, .container-offer, .container-instagram, form, .container-contact, .contact-box, .contact-inside, footer, footer ul{
+    display: flex;
+}
+
+nav ul li, form, .holder-price .input-range{
+    position: relative;
+} 
+
+nav ul li::after, header h2::after, .main h1::after, .offer-bar::after{
+    content: '';
+}
+
+.offer-bar > i, .close, .arrow-box, .arrow-up, .instagram-link, .holder-price .input-range::after,.holder-price .input-range::before, .contact-inside i, .offer-bar span, nav ul li::after, header h2::after, .main h1::after, .offer-bar::after{
+	position: absolute;
+}
+
+nav ul li, .hamburger-menu, .hold-header a, .offer-bar, .img-gallery img, .close, section h3 a, .arrow-up, .instagram-link, form p input, .result button, footer ul li{
+	cursor: pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+/*Slider-menu*/
+.container-slider{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    background-image: url(img/main-img.jpg);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    background-size: cover;
+}
+
+nav{
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--primary-black);
+    padding: 0 20px;
+    height: 7rem;
+}
+
+nav .logo{
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+}
+nav .logo img{
+    width: 100px;
+    padding: 15px 0 15px 0px;
+    margin: 0 0 0 30px;
+}
+
+nav ul{
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 40%;
+    gap: 2rem;
+    display: flex;
+}
+
+nav ul li{
+    flex-basis: 20%;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1rem;
+    transition: transform .3s;
+}
+
+.active-dot{
+    color: var(--primary-red);
+}
+
+nav ul li::after{
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    transition: .3s;
+    background-color: var(--primary-red);
+}
+nav ul li:hover::after{
+    left: 10%;
+    width: 80%;
+}
+
+nav ul li:hover{
+    transform: scale(1.1);
+}
+
+
+nav ul span{
+    background-color: var(--primary-grey);
+    width: 250px;
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 0.7rem;
+    margin: 0 10px 0 0;
+}
+
+.fa-phone{
+    font-size: 2rem;
+    padding: 0 10px 0 0;
+    animation: shake-phone 1s infinite both;
+}
+
+.fa-bars{
+    visibility: hidden;
+    display: none;
+    color: var(--font-color);
+    font-size: 3.5rem;
+}
+
+.hamburger-menu{
+    width: 30px;
+    height: 100%;
+    text-align: center;
+}
+
+.exit-menu{
+    display: none;
+}
+
+/*header-information-slider navi*/
+header{
+    width: 100%;
+    height: calc(100vh - 9rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hold-header{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hold-header img{
+    width: 250px;
+    padding: 2rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.hold-header h1, .hold-header h2{
+    text-align: center;
+}
+
+.hold-header h1{
+    font-size: 5rem;
+}
+
+.hold-header h2{
+    font-size: 3rem;
+}
+
+.hold-header a{
+    text-align: center;
+    line-height: 55px;
+    color: var(--primary-black);
+    width: 230px;
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 2rem;
+    background-color: var(--font-color);
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+}
+
+.dot-holder{
+    width: 100%;
+    flex-basis: 4%;
+    background-color: var(--primary-black);
+    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 1);
+}
+
+header ul{
+    width: 150px;
+    justify-content: space-between;
+}
+
+/*Oferta*/
+
+main,section{
+    width: 100%;
+    background-color: var(--primary-black);
+}
+
+main h1, section h1{
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 40px;
+}
+
+main h1::after{
+    bottom: 0;
+    left: 50%;
+    width: 10%;
+    background-color: #f10414;
+}
+
+.container-offer{
+    justify-content: space-around;
+    align-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 5rem 0;
+}
+
+.offer-bar{
+    flex-basis: 25%;
+    max-width: 600px;
+    height: 200px;
+}
+
+.offer-bar span{
+    display: block;
+    width: 100%;
+    top: 50%;
+    font-size: 3rem;
+    text-align: center;
+    z-index: 1;
+    opacity: 0;   
+    transition: opacity .4s .1s ease;
+    font-weight: 600;
+
+}
+
+.modal{
+    display: flex;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: auto;
+}
+
+.inside-main-modal{
+    display: flex;
+    position: relative;
+    width: 80%;
+    background-color: var(--primary-black);
+    border: 2px solid var(--primary-grey);
+}
+
+.left-bar{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.inside-main-modal h1{
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 3rem;
+    text-align: left;
+    flex-basis: 10%;
+}
+
+.description{
+    width: 95%;
+    font-size: 2.3rem;
+    text-align: justify;
+    padding: 0rem 2rem 1rem 3rem;
+    flex-grow: 1;
+}
+
+.right-bar{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.benefits{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem 2rem 1rem 3rem;
+}
+
+.benef{
+    width: 100%;
+    font-size: 2rem;
+}
+
+.benef i{
+    font-size: 2.4rem;
+    padding-right: 1rem;
+    color: rgb(0, 255, 34);
+}
+/*Modal gallery*/
+
+.expanded-img{
+    position: relative;
+    text-align: center;
+}
+
+.expanded-img img{
+    position: relative;
+    width: 80%;
+}
+
+.modal-gallery{
+    width: 100%;
+    display: flex;
+}
+
+.img-gallery{
+    width: 25%;
+    padding: 1rem;
+}
+
+.img-gallery img{
+    width: 100%;
+    opacity: .8;
+}
+
+.img-gallery img:hover{
+    opacity: 1;
+}
+
+
+.close{
+    color: var(--font-color);
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-black);
+    border-radius: 50%;
+    border: 1px solid var(--primary-grey);
+    text-align: center;
+    line-height: 50px;
+    top: -25px;
+    right: -25px;
+    font-size: 4rem;
+}
+
+.offer-bar::after{
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.2);
+    transition: .4s ease;
+}
+
+.offer-bar > i{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+    z-index: 1;
+    transition: transform .4s ease;
+}
+
+.offer-bar:hover > i{
+    transform: translate(-50%,-100%);
+    
+}
+
+.offer-bar:hover span{
+    opacity: 1; 
+    transition-delay: .1s;
+}
+
+.offer-bar:nth-of-type(n){
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.offer-bar:nth-of-type(1){
+    background-image: url(img/offer-bar/ceramika.JPG);
+    background-position: 50% 60%;
+}
+
+.offer-bar:nth-of-type(2){
+    background-image: url(img/offer-bar/polerowanie.JPG);
+}
+
+.offer-bar:nth-of-type(3){
+    background-image: url(img/offer-bar/przyciemnianie.JPG);
+    background-position: 100% 60%;
+}
+
+.offer-bar:nth-of-type(4){
+    background-image: url(img/offer-bar/interior.jpg);
+    background-position: 100% 60%;
+}
+
+.offer-bar:nth-of-type(5){
+    background-image: url(img/offer-bar/carwasj.jpg);
+    background-position: 100%;
+}
+
+.offer-bar:nth-of-type(6){
+    background-image: url(img/offer-bar/tapicerka.jpg);
+}
+
+/*instagram section*/
+section h3{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+section h3 a{
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
+.container-instagram{
+    width: 85%;
+    margin: auto;
+    height: auto;
+    padding: 4rem 0 4rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.instagram-post-holder{
+    position: relative;
+    width: 400px;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.instagram-post-holder img{
+    display: block;
+    width: 100%;
+    background-size: 100%;
+    background-position: 100%;
+}
+
+.arrow-up{
+    bottom: 10px;
+    left: calc(50% - 50px/2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-black);
+    text-align: center;
+    line-height: 50px;
+    font-size: 3rem;
+    transition: .5s ;
+    transform: rotate(0);
+}
+
+.arrow-up.active{
+    bottom: 85%;
+    transform: rotate(180deg);
+}
+
+.arrow-box{
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+    transition: .5s;
+}
+
+.arrow-box.active{
+    bottom: -20%;
+}
+
+.arrow-box h2{
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+    padding-top: .6rem;
+}
+
+.arrow-box p{
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem 2rem 0 2rem;
+    overflow: auto;
+    word-break: break-word;
+    height: auto;
+    text-align:initial
+}
+
+.instagram-link{
+    bottom: 22%;
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 40px;
+    background-color: var(--primary-black);
+    font-size: 2rem;
+    line-height: 40px;
+    text-align: center;
+}
+
+/*Cennik*/
+
+.container-price{
+    width: 85%;
+    background-color: var(--primary-black);
+    margin: auto;
+    border: 2px solid var(--primary-grey);
+    margin-top: 2.5rem;
+    background-image: url(img/cennik/bgc-cennik.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+}
+
+form{
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.holder-price{
+    flex-basis: 30%;
+}
+
+.holder-price h3{
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.holder-price select{
+    display: block;
+    width: 300px;
+    color: var(--font-color);
+    font-size: 2.1rem;
+    padding: .5rem;
+    background-color: #444;
+    text-align: center;
+    margin: auto;
+    margin-bottom: .8rem;
+}
+
+.holder-price .input-range{
+    display: block;
+    margin: auto;
+    width: 150px;
+}
+
+.holder-price .input-range::after,.holder-price .input-range::before{
+    height: 20px;
+    top: calc(50% - 10px);
+    color: var(--font-color);
+    font-size: 1.5rem;
+}
+
+.holder-price .input-range::after{
+    content: "Dobry";
+    right: -60px;
+}
+
+.holder-price .input-range::before{
+    content: "Zły";
+    left: -40px;
+}
+
+.holder-price span{
+    display: block;
+    width: 300px;
+    padding: .3rem;
+    font-size: 2.2rem;
+    margin: auto;
+}
+
+form p{
+    margin-left: 20%;
+    display: block;
+    font-size: 2rem;
+    padding: .4rem;
+}
+
+form p input{
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-right: 1rem;
+}
+
+.result{
+    position: relative;
+    bottom: 0;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.result span{
+    color: red;
+}
+
+/*Kontakt*/
+
+.container-contact{
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-box{
+    min-width: 420px;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.contact-header{
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 1rem 2rem 0 2rem;
+    
+
+}
+
+.contact-inside{
+    width: 80%;
+    height: 70%;
+    border: 2px solid var(--primary-red); 
+    border-radius: 3%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-inside i{
+    width: 70px;
+    text-align: center;
+    background-color: var(--primary-black);
+    font-size: 5rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: -17px 0px 40px 9px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -17px 0px 40px 9px rgba(0, 0, 0, 1);
+    box-shadow: -17px 0px 40px 9px rgba(0, 0, 0, 1);
+}
+
+.contact-inside h4{
+    font-size: 2.5rem;
+    padding: 1rem;
+    line-height: 35px;
+    position: relative;
+}
+
+.icons-header i{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2.5rem;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    color: var(--primary-red);
+}
+
+.google-loction{
+    width: 100%;
+}
+
+.result button{
+    width: 100px;
+    height: 100%;
+    background-color: var(--primary-grey);
+    font-size: 2rem;
+    color: var(--font-color);
+    border: 1px solid var(--primary-red);
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary-black);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img{
+    width: 110px;
+}
+
+footer ul{
+    list-style: none;
+    width: 35 0px;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+footer ul li{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-grey);
+    text-align: center;
+    line-height: 48px;
+    font-size: 2.2rem;
+    transition: .2s;
+    border:2px solid var(--primary-grey);
+}
+
+footer ul li:hover{
+    transform: scale(1.1);
+    border: 2px solid  var(--font-color); 
+}
+
+footer .copyright{
+    font-size: 1.3rem;
+}
+
+
+@keyframes shake-phone {
+    0%{
+        transform: rotate(0);
+    }
+    10%{
+        transform: rotate(-10deg);
+    }
+
+    50%{
+        transform: rotate(10deg);
+    }
+
+    70%{
+        transform: rotate(-10deg);
+    }
+
+    90%{
+        transform: rotate(10deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slider-smooth-transition {
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+@media (max-width: 1300px) {
+
+    .offer-bar{
+        flex-basis: 40%;
+    }
+    .offer-bar span{
+        opacity: 1;
+    }
+    .offer-bar > i{
+        transform: translate(-50%,-100%);
+    }
+    .contact-inside p{
+        font-size: 2rem;
+    }
+    .description{
+        font-size: 2rem;
+    }
+
+
+
+}
+
+@media (max-width: 900px){
+    .fa-bars{
+        visibility: visible;
+        display: block;
+        padding: 2rem 0;
+        font-size: 2.8rem;
+    }
+    nav .logo img{
+        width: 80px;
+        margin-left: 0;
+    }
+    header{
+        height: calc(100vh - 6rem);
+    }
+
+    nav{
+        height: 6rem;
+    }
+    nav ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 1px;
+        font-size: 3rem;
+        display: none;
+    }
+
+    nav ul li a {
+        height: auto;
+    }
+
+    .exit-menu{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        font-size: 7rem;
+        cursor: pointer;
+    }
+
+    nav ul li{
+        font-size: 3rem;
+        flex-basis: 0;
+    }
+
+    nav span{
+        display: none;
+    }
+    .hold-header img{
+        display: none;
+    }
+    .hold-header h1{
+        font-size: 3.5rem;
+    }
+    .hold-header h2{
+        font-size: 1.7rem;
+    }
+    .offer-bar{
+        flex-basis: 80%;
+    }
+    .container-instagram{
+        flex-direction: column;
+        align-items: center;
+    }
+    .instagram-post-holder{
+        margin-bottom: 2rem;
+        width: auto;
+        max-width: 330px;
+    }
+
+    .arrow-box h2{
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .arrow-box p{
+        font-size: 1.4rem;
+        padding: .2rem 2rem 0 2rem;
+    }
+
+    .description{
+        font-size: 1.2rem;
+    }
+    .inside-main-modal{
+        flex-direction: column;
+    }
+
+    .left-bar h1{
+        font-size: 2rem;
+    }
+
+    .benef{
+        font-size: 1.3rem;
+    }
+    form p{
+        margin-left: 0;
+    }
+    .arrow-up{
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    .contact-box{
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+        min-height: 200px;
+        min-width: 10px;
+    }
+
+    .contact-inside h4{
+        font-size: 2rem;
+    }
+
+    .holder-price select{
+        width: 85%;
+    }
+
+    .holder-price h3{
+        font-size: 2.2rem;
+    }
+    footer .copyright{
+        font-size: 1rem;
+    }
+
+    form p{
+        padding-left: 1.5rem;
+    }
+
+    .holder-price span{
+        padding-left: 1rem;
+    }
+
+    form{
+        gap: 0;
+    }
+
+    .result{
+        margin-top: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .result button{
+        width: 80px;
+        font-size: 1.8rem;
+    }
+
+    .left-bar, .right-bar{
+        flex-basis: auto;
+    }
+
+    .expanded-img img{
+        width: 100%;
+    }
+    .inside-main-modal{
+        width: 85%;
+        height: 90%;
+        max-height: 630px;
+        overflow: auto;
+    }
+    .benef i {
+        font-size: 1.3rem;
+    }
+
+    .benefits{
+        padding: 0rem 2rem 1rem 2rem ;
+    }
+
+    .close{
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        line-height: 30px;
+        border: 0;
+        font-size: 3rem;
+        top: 10px;
+        right: 10px;
+}
+
+    .description{
+        padding: 0rem 1rem 1rem 2rem;
+        flex: 0;
+    }
+    .container-instagram{
+        gap: 0;
+        padding: 1rem 0 0 0;
+    }
+    section h1{
+        padding-top: 1rem;
+    }
+
+    .contact-inside .email{
+        font-size: 1.7rem;
+    }
+
+    footer ul li{
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.7rem;
+    }
+    footer img{
+        width: 80px;
+    }
+    footer{
+        height: 140px;
+    }
+    .hold-header a{
+        width: 180px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 1.6rem;
+    }
+    .icons-header a{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 360px){
+    .container-price{
+        width: 90%;
+    }
+    form p, .holder-price span{
+        width: 100%;
+        min-width: 270px;
+    }
+    form{
+        padding: 0 0 2rem 0;
+    }
+}
+
+
